@@ -22,8 +22,3 @@ namespace Infrastructure.Services
     }
 }
 
-// DI
-
-// method(int x, MovieService service)
-// var service =  new MovieService();
-// method(4,service )

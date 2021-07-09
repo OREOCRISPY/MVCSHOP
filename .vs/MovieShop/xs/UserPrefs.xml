@@ -1,19 +1,23 @@
-﻿<Properties StartupConfiguration="{F3158268-24BE-440C-A867-BCBE3460922E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Services/MovieService.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{F3158268-24BE-440C-A867-BCBE3460922E}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="ApplicationCore/RepositoryInterfaces/IMovieRepository.cs" Line="10" Column="22" />
-      <File FileName="ApplicationCore/RepositoryInterfaces/IUserRepository.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/ServiceInterfaces/IMovieService.cs" Line="12" Column="1" />
-      <File FileName="ApplicationCore/ServiceInterfaces/IUserService.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/Entities/Movie.cs" Line="10" Column="1" />
-      <File FileName="ApplicationCore/Models/MovieCardResponseModel.cs" Line="11" Column="1" />
-      <File FileName="Infrastructure/Repositories/MovieRepository.cs" Line="16" Column="1" />
-      <File FileName="Infrastructure/Services/MovieService.cs" Line="17" Column="6" />
+      <File FileName="ApplicationCore/RepositoryInterfaces/IUserRepository.cs" />
+      <File FileName="ApplicationCore/ServiceInterfaces/IMovieService.cs" />
+      <File FileName="ApplicationCore/ServiceInterfaces/IUserService.cs" />
+      <File FileName="ApplicationCore/Entities/Movie.cs" />
+      <File FileName="ApplicationCore/Models/MovieCardResponseModel.cs" />
+      <File FileName="Infrastructure/Repositories/MovieRepository.cs" />
+      <File FileName="Infrastructure/Services/MovieService.cs" Line="22" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MovieShop" expanded="True" />
+          <Node name="MovieShop" expanded="True" selected="True">
+            <Node name="Infrastructure" expanded="True">
+              <Node name="Services" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
