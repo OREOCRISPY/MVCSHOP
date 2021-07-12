@@ -23,4 +23,10 @@ namespace MovieShopMVC
                     webBuilder.UseStartup<Startup>();
                 });
     }
+
+    // 1. Program.cs main method is the one that executes first=>
+    // 2. CreateHostBuilder Kestral server is a cross platfrom server (.NET Core)
+    // 3. Startup
+    // Use this method to configure the HTTP request pipeline
+
 }

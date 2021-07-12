@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,14 @@ namespace MovieShopMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IMovieService, MovieService>();
+            // services.AddScoped<IMovieService, MovieService2>();
+            // 3rdy party IOC Autofac, Ninject
+            // ASP.NET Core has buil;tin support for DI and it has built-in container
+            // ASP.NET Framework there was no DI, Autofac, Ninject
+            // Reflection ?
+            // get me total number of methods and properties in a class
+            // System.Relection
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +60,7 @@ namespace MovieShopMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Privacy}/{id?}");
             });
         }
     }

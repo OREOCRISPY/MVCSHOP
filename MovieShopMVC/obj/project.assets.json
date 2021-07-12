@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "ApplicationCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../ApplicationCore/ApplicationCore.csproj",
+      "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "ApplicationCore >= 1.0.0",
+      "Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/abhilash/.nuget/packages/": {}
@@ -31,7 +69,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj": {
+              "projectPath": "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj"
+            },
+            "/Users/abhilash/Projects/MovieShop/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/abhilash/Projects/MovieShop/Infrastructure/Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

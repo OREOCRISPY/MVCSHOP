@@ -6,27 +6,56 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MovieShopMVC.Models;
+using Infrastructure.Services;
+using ApplicationCore.ServiceInterfaces;
 
 namespace MovieShopMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        // Each and every rwqeust in MVC controller
+        // localhost/home/index
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        // 1. *** Contsructor Injection 99.99% **
+        // 2. Method Injection
+        // 3. Property Injection
 
-        public IActionResult Index()
+        private readonly IMovieService _movieService;
+
+        public HomeController(IMovieService movieService)
         {
-            return View();
+            _movieService = movieService;
+            
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
+        public IActionResult Index()
+        {
+
+            var movies = _movieService.GetTopRevenueMovies();
+
+            var myType = movies.GetType();
+
+            // 3 ways to send the data from Controller/action to View
+            // 1.*** Models (strongly typed models)
+            // 2. ViewBag
+            // 3. ViewData
+
+            ViewBag.MoviesCount = movies.Count();
+
+            return View(movies);
+        }
+                
+
+        // HomeController   
+        // MovieController       MovieService
+        // UserController
+        // newing up
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

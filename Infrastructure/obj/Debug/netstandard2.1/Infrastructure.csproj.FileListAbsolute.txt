@@ -1,0 +1,12 @@
+/Users/abhilash/Projects/MovieShop/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.deps.json
+/Users/abhilash/Projects/MovieShop/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll
+/Users/abhilash/Projects/MovieShop/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb
+/Users/abhilash/Projects/MovieShop/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.dll
+/Users/abhilash/Projects/MovieShop/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.pdb
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.AssemblyReference.cache
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfoInputs.cache
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfo.cs
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CopyComplete
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll
+/Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb
