@@ -9,11 +9,16 @@
     <None Remove="Entities\" />
     <None Remove="RepositoryInterfaces\" />
     <None Remove="ServiceInterfaces\" />
+    <None Remove="System.ComponentModel.Annotations" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Entities\" />
     <Folder Include="RepositoryInterfaces\" />
     <Folder Include="ServiceInterfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 </Project>
