@@ -33,20 +33,9 @@ namespace MovieShopMVC.Controllers
             return View();
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult>  Index()
         {
-
-            var movies = _movieService.GetTopRevenueMovies();
-
-            var myType = movies.GetType();
-
-            // 3 ways to send the data from Controller/action to View
-            // 1.*** Models (strongly typed models)
-            // 2. ViewBag
-            // 3. ViewData
-
-            ViewBag.MoviesCount = movies.Count();
-
+            var movies = await _movieService.GetTopRevenueMovies();
             return View(movies);
         }
                 

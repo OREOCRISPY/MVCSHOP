@@ -3,7 +3,9 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MovieShop" expanded="True" selected="True" />
+          <Node name="MovieShop" expanded="True" selected="True">
+            <Node name="MovieShopMVC" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
