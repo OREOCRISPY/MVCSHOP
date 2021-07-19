@@ -26,4 +26,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Movies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Movies\" />
+  </ItemGroup>
 </Project>

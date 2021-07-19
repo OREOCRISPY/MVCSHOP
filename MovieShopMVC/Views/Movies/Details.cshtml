@@ -1,0 +1,64 @@
+﻿@model ApplicationCore.Models.MovieDetailsResponseModel
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <img src=@Model.PosterUrl class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h1>
+                @Model.Title
+            </h1>
+            <div class="pt-3">
+                <h3>
+                    Casts:
+                </h3>
+                <div>
+                    @foreach (var Cast in Model.Casts)
+                    {
+                        <a href="@Cast.ProfilePath">@Cast.Name</a>
+                    }
+                </div>
+            </div>
+            <div class="pt-3">
+                <h3>
+                    Overview
+                </h3>
+                <div>
+                    @Model.Overview
+                </div>
+            </div>
+            <div class="pt-3">
+                <h3>
+                    Genre:
+                </h3>
+                <div>
+                    @foreach (var genre in Model.Genres)
+                    {
+                        <button class="pr-2 btn btn-secondary active">@genre.Name</button>
+                    }
+                </div>
+            </div>
+            <div>
+                <h3 class="pt-3">Other Info</h3>
+                <div>Release Date:@Model.ReleaseDate</div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div>
+                Rating:
+                <div>
+                    <button class="btn-outline-danger active btn-block">@Model.Rating</button>
+                </div>
+            </div>
+            <div>
+                Purchase:
+                <div>
+                    <button class="btn-warning active btn-block">Price:@Model.Price</button>
+                </div>
+            </div>
+            <div class="mt-5">
+                <button class="btn-outline-info active btn-block">Favorite<span class="badge badge-light">@Model.FavoritesCount</span></button>
+            </div>
+        </div>
+    </div>
+</div>

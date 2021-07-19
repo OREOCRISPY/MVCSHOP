@@ -10,3 +10,15 @@
 /Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CopyComplete
 /Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll
 /Users/abhilash/Projects/MovieShop/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb
+/Users/bozhou/Downloads/project/2021June/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.deps.json
+/Users/bozhou/Downloads/project/2021June/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll
+/Users/bozhou/Downloads/project/2021June/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb
+/Users/bozhou/Downloads/project/2021June/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.dll
+/Users/bozhou/Downloads/project/2021June/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.pdb
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.AssemblyReference.cache
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfoInputs.cache
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfo.cs
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CopyComplete
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll
+/Users/bozhou/Downloads/project/2021June/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb

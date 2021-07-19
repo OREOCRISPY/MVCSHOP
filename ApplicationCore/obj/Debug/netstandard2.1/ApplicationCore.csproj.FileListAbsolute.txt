@@ -7,3 +7,12 @@
 /Users/abhilash/Projects/MovieShop/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.csproj.CoreCompileInputs.cache
 /Users/abhilash/Projects/MovieShop/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.dll
 /Users/abhilash/Projects/MovieShop/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.pdb
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.deps.json
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.dll
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.pdb
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.csproj.AssemblyReference.cache
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.AssemblyInfoInputs.cache
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.AssemblyInfo.cs
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.csproj.CoreCompileInputs.cache
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.dll
+/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.pdb

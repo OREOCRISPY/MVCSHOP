@@ -19,5 +19,10 @@ namespace MovieShopMVC.Controllers
             var movie = await _movieService.GetMovieDetails(id);
             return View(movie);
         }
+        public async Task<IActionResult> Genre(int id)
+        {
+            var movie = await _movieService.GetMovieCardByGenre(id);
+            return View(movie);
+        }
     }
 }

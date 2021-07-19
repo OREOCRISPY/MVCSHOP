@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj": {}
+    "/Users/bozhou/Downloads/project/2021June/ApplicationCore/ApplicationCore.csproj": {}
   },
   "projects": {
-    "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj": {
+    "/Users/bozhou/Downloads/project/2021June/ApplicationCore/ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj",
+        "projectUniqueName": "/Users/bozhou/Downloads/project/2021June/ApplicationCore/ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "/Users/abhilash/Projects/MovieShop/ApplicationCore/ApplicationCore.csproj",
-        "packagesPath": "/Users/abhilash/.nuget/packages/",
-        "outputPath": "/Users/abhilash/Projects/MovieShop/ApplicationCore/obj/",
+        "projectPath": "/Users/bozhou/Downloads/project/2021June/ApplicationCore/ApplicationCore.csproj",
+        "packagesPath": "/Users/bozhou/.nuget/packages/",
+        "outputPath": "/Users/bozhou/Downloads/project/2021June/ApplicationCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/abhilash/.nuget/NuGet/NuGet.Config"
+          "/Users/bozhou/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"

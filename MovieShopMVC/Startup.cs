@@ -32,7 +32,8 @@ namespace MovieShopMVC
             services.AddControllersWithViews();
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IMovieRepository, MovieRepository>();
-            
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<IGenreService, GenreService>();
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration
                     .GetConnectionString("MovieShopDbConnection")));
@@ -69,7 +70,7 @@ namespace MovieShopMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Privacy}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

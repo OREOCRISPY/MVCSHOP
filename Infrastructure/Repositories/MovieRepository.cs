@@ -36,10 +36,17 @@ namespace Infrastructure.Repositories
 
             if (movieRating > 0)
             {
-                movie.Rating = movieRating;
+                movie.Rating = Math.Round(movieRating, 1, MidpointRounding.AwayFromZero);
             }
 
             return movie;
+        }
+
+        public async Task<List<Movie>> Get30MoviesByGenre(int Genre_id)
+        {
+            var movieGenre = await _dbContext.Movies.Where(m=>m.Genres.Select(x=>x.Id).Contains(Genre_id)).OrderByDescending(m=>m.Revenue).Take(30).ToListAsync();
+            
+            return movieGenre;
         }
     }
 }
