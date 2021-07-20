@@ -14,6 +14,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ApplicationCore.Entities;
+using ApplicationCore.RepositoryInterfaces;
+using ApplicationCore.ServiceInterfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MovieShopMVC
 {
@@ -34,10 +38,22 @@ namespace MovieShopMVC
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IGenreRepository, GenreRepository>();
             services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
+            services.AddScoped<ICurrentUser, CurrentUser>();
+            services.AddHttpContextAccessor();
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration
                     .GetConnectionString("MovieShopDbConnection")));
-            // services.AddScoped<IMovieService, MovieService2>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options => {
+
+                options.Cookie.Name = "MovieShopAuth";
+                options.ExpireTimeSpan = TimeSpan.FromHours(2);
+                options.LoginPath = "/Account/Login";
+            });
+                    // services.AddScoped<IMovieService, MovieService2>();
             // 3rdy party IOC Autofac, Ninject
             // ASP.NET Core has buil;tin support for DI and it has built-in container
             // ASP.NET Framework there was no DI, Autofac, Ninject
@@ -64,6 +80,7 @@ namespace MovieShopMVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

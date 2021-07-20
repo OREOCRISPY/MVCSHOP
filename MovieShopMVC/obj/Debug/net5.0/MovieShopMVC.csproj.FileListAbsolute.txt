@@ -153,3 +153,9 @@
 /Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Movies/Details.cshtml.g.cs
 /Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Shared/_GenresView.cshtml.g.cs
 /Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Movies/Genre.cshtml.g.cs
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Account/Login.cshtml.g.cs
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Account/Register.cshtml.g.cs
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/Users/bozhou/Downloads/project/2021June/MovieShopMVC/obj/Debug/net5.0/Razor/Views/Account/EditProfile.cshtml.g.cs

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1TuypNf1kP7vK0kPlVonSHt1JG1e/fhcsZzL6EKgbhg+j1yR1nbsI+BJYqbHKblguQ1H/yjPDULqQUnyGlhHyA==",
+  "dgSpecHash": "m3AqD1f4JDsb8/KhEzRmfGQul4MeUXaopTpwSc5WTMRuDVWAUOtH1eFzT1mr+MAKEdLaqxAACPF/MXAWSRvkiQ==",
   "success": true,
   "projectFilePath": "/Users/bozhou/Downloads/project/2021June/MovieShopMVC/MovieShopMVC.csproj",
   "expectedPackageFiles": [
     "/Users/bozhou/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/bozhou/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.8/microsoft.aspnetcore.cryptography.internal.5.0.8.nupkg.sha512",
+    "/Users/bozhou/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/5.0.8/microsoft.aspnetcore.cryptography.keyderivation.5.0.8.nupkg.sha512",
     "/Users/bozhou/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/bozhou/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "/Users/bozhou/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.0.1/microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

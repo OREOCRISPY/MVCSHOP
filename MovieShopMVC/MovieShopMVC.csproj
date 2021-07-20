@@ -28,8 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Movies\" />
+    <None Remove="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Movies\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>
