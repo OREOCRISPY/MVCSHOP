@@ -42,6 +42,8 @@ namespace MovieShopMVC
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
             services.AddScoped<ICurrentUser, CurrentUser>();
+            services.AddScoped<ICastRepository, CastRepository>();
+            services.AddScoped<ICastService, CastService>();
             services.AddHttpContextAccessor();
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration

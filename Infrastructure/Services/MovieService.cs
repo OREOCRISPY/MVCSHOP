@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ApplicationCore.Models;
 using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
+using ApplicationCore.Entities;
 
 namespace Infrastructure.Services
 {
@@ -73,20 +74,44 @@ namespace Infrastructure.Services
             var MovieCardResponse = new List<MovieCardResponseModel>();
 
             foreach (var movie in movies) {
+                var genre = new List<GenreModel>();
+                foreach (var g in movie.Genres) {
+                    genre.Add(new GenreModel { Id=g.Id,Name=g.Name});
+                }
                 MovieCardResponse.Add(new MovieCardResponseModel() {
                     Id = movie.Id,
                     Budget = movie.Budget.GetValueOrDefault(),
                     PosterUrl = movie.PosterUrl,
-                    Title = movie.Title
+                    Title = movie.Title,
+                    Genres=genre
                 });
             }
             return MovieCardResponse;
         }
+
+        public async Task<int> getCountMovie()
+        {
+            int res=await _movieRepository.GetCountAsync();
+            return res;
+        }
+
+        public async Task<ApplicationCore.Entities.Movie> GetTopRated()
+        {
+            var res = await _movieRepository.GetTopRatedMovie();
+            return res;
+        }
+
+        public async Task<List<ReviewModel>> GetReviewByMovieId(int id)
+        {
+            var res = await _movieRepository.GetReviewByMovieId(id);
+            var Movie = new List<ReviewModel>();
+            foreach (var r in res) {
+                var model = new ReviewModel { CreatedDate = r.CreatedDate, Rating = r.Rating, ReviewText = r.ReviewText, MovieId = r.MovieId, UserId = r.UserId };
+                Movie.Add(model);
+            }
+            return Movie;
+        }
     }
-
-
-    
-
 
 }
 

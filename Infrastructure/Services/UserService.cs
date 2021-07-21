@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using ApplicationCore.Entities;
@@ -121,6 +122,139 @@ namespace Infrastructure.Services
         public Task<UserEditProfileResponseModel> Edit(UserEditProfileRequest requestModel)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<MovieCardResponseModel>> MyMovie(string email)
+        {
+            var res=await _userRepository.GetMoviesByEmail(email);
+            var Movies = new List<MovieCardResponseModel>();
+            foreach (var r in res) {
+                MovieCardResponseModel temp = new MovieCardResponseModel();
+                temp.Budget = (decimal)(r.Budget==null?0:r.Budget);
+                temp.Id = r.Id;
+                temp.PosterUrl = r.PosterUrl;
+                temp.Title = r.Title;
+                var genres = new List<GenreModel>();
+                foreach (var g in r.Genres) {
+                    var curgenre = new GenreModel();
+                    curgenre.Id = g.Id;
+                    curgenre.Name = g.Name;
+                    genres.Add(curgenre);
+                }
+                temp.Genres = genres;
+                Movies.Add(temp);
+            }
+            return Movies;
+        }
+
+        public async Task<UserResponseModel> GetUserById(int id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+
+            var userResponseModel = new UserResponseModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                DateOfBirth = user.DateOfBirth
+            };
+            return userResponseModel;
+        }
+
+        public async Task<int> GetUserCount()
+        {
+            var count=await _userRepository.GetCountAsync();
+            return count;
+        }
+
+        public async Task<UserPurchaseResponseModel> PurchaseMovie(UserPurchaseRequestModel mod)
+        {
+            var dbUser = await _userRepository.GetUserByEmail(mod.Email);
+            if (dbUser == null)
+            {
+                throw new NotFoundException("Email does not exists, please register first");
+            }
+
+            var hashedPssword = HashPassword(mod.Password, dbUser.Salt);
+
+            if (hashedPssword != dbUser.HashedPassword)
+            {
+                throw new NotFoundException("Password inccorect");
+            }
+            var purchase = await _userRepository.PurchaseMovie(mod);
+            return new UserPurchaseResponseModel { orderId = purchase.PurchaseNumber};
+        }
+
+        public async Task<string> FavoriteMovie(UserFavoriteRequestModel model)
+        {
+            var res = await _userRepository.Favorite(model);
+            return res;
+        }
+
+        public async Task<string> UnFavoriteMovie(UserFavoriteRequestModel model)
+        {
+            var res = await _userRepository.UnFavorite(model);
+            return res;
+        }
+
+        public async Task<string> CheckUserFavorite(int id, int MovieId)
+        {
+           var res= await _userRepository.CheckFavorite(id, MovieId);
+            return res;
+        }
+
+        public async Task<Review> ModifyReview(string text, int rating, UserLoginRequestModel mod,int mId)
+        {
+            var dbUser = await _userRepository.GetUserByEmail(mod.Email);
+            if (dbUser == null)
+            {
+                throw new NotFoundException("Email does not exists, please register first");
+            }
+
+            var hashedPssword = HashPassword(mod.Password, dbUser.Salt);
+
+            if (hashedPssword != dbUser.HashedPassword)
+            {
+                throw new NotFoundException("Password inccorect");
+            }
+
+            var user = await _userRepository.GetUserByEmail(mod.Email);
+            var review = new Review { MovieId = mId, Rating = rating, ReviewText = text, UserId = user.Id,CreatedDate=DateTime.Now};
+            var res=await _userRepository.PutReview(review, user.Id);
+            return res;
+        }
+
+        public async Task<Review> PutReview(Review review, UserLoginRequestModel mod)
+        {
+            var dbUser = await _userRepository.GetUserByEmail(mod.Email);
+            if (dbUser == null)
+            {
+                throw new NotFoundException("Email does not exists, please register first");
+            }
+
+            var hashedPssword = HashPassword(mod.Password, dbUser.Salt);
+
+            if (hashedPssword != dbUser.HashedPassword)
+            {
+                throw new NotFoundException("Password inccorect");
+            }
+            var user =await _userRepository.GetUserByEmail(mod.Email);
+            var res=await _userRepository.PutReview(review, user.Id);
+            return res;
+        }
+
+        public async Task<List<ReviewModel>> getReview(int id) {
+            return await _userRepository.GetReviews(id);
+        }
+        public async Task<List<Favorite>> GetFavorite(int id) {
+            return await _userRepository.GetFavorites(id);
+        }
+
+        public async Task<List<Movie>> GetPurchase(int uid)
+        {
+            var res = await _userRepository.RepositoryGetPurchase(uid);
+            return res;
         }
     }
 }

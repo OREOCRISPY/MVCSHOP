@@ -44,9 +44,41 @@ namespace Infrastructure.Repositories
 
         public async Task<List<Movie>> Get30MoviesByGenre(int Genre_id)
         {
-            var movieGenre = await _dbContext.Movies.Where(m=>m.Genres.Select(x=>x.Id).Contains(Genre_id)).OrderByDescending(m=>m.Revenue).Take(30).ToListAsync();
+            var movieGenre = await _dbContext.Movies.Where(m=>m.Genres.Select(x=>x.Id).Contains(Genre_id)).Include(m=>m.Genres).OrderByDescending(m=>m.Revenue).Take(30).ToListAsync();
             
             return movieGenre;
+        }
+
+        public async Task<Movie> GetTopRatedMovie()
+        {
+            var res =await (from e in _dbContext.Movies
+                       join r in _dbContext.Reviews
+                       on e.Id equals r.MovieId
+                       select new
+                       {
+                           id = e.Id,
+                           Rating = r.Rating,
+                           title = e.Title,
+                           PosterUrl = e.PosterUrl,
+                           Overview = e.Overview
+                       } into g
+                       group g by new { g.id, g.Overview, g.PosterUrl, g.title } into g2
+                       select new
+                       {
+                           g2.Key.id,
+                           g2.Key.Overview,
+                           g2.Key.PosterUrl,
+                           g2.Key.title,
+                           AvgRating = g2.Average(g => g.Rating)
+                       }).OrderByDescending(m => m.AvgRating).FirstOrDefaultAsync();
+            var movie = new Movie { Id = res.id, Title = res.title, PosterUrl = res.PosterUrl, Overview = res.Overview, Rating = res.AvgRating };
+            return movie;
+        }
+
+
+        public async Task<List<Review>> GetReviewByMovieId(int id)
+        {
+            return await _dbContext.Reviews.Where(r => r.MovieId == id).ToListAsync();
         }
     }
 }

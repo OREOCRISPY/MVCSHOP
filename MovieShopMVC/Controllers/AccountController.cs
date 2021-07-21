@@ -116,8 +116,6 @@ namespace MovieShopMVC.Controllers
             // user/buymovie => should take userid from cookie and send to Database
             // 10:15 AM you wanna buy a movie 
             // 10:30 AM you wanna fav a movie
-
-            return View();
         }
 
         [HttpGet]
@@ -133,6 +131,11 @@ namespace MovieShopMVC.Controllers
             }
             var res = await _userService.Edit(model);
             return RedirectToAction("Login");
+        }
+
+        public async Task<IActionResult> MyMovie() {
+            var res=await _userService.MyMovie("bz1188@nyu.edu");
+            return View(res);
         }
     }
 }
